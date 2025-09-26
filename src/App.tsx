@@ -2,7 +2,7 @@ import "./App.css";
 import FormElement from "./FormElement";
 import MoonHoles from "./MoonHoles";
 import SpaceShip from "./SpaceShip";
-import Star from "./star";
+import Star from "./Star";
 
 function App() {
   const starsArr = new Array(30);
