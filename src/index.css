@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #060719;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+}
+
+div.moon {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: #d1d1d1;
+  position: fixed;
+  left: 5%;
+  top: 8%;
+  z-index: 3;
+}
+
+div.star {
+  width: 2px;
+  height: 2px;
+  background-color: white;
+  position: fixed;
+  border-radius: 50%;
+}
+
+.moon-hole {
+  width: 10px;
+  height: 15px;
+  position: absolute;
+  background-color: #b9b9b9;
+  top: 50%;
+}
+
+.ship-container {
+  width: 250px;
+  height: 120px;
+  position: fixed; /* stays at bottom of the page */
+  bottom: 0;
+  left: -5%;
+  z-index: -1;
+}
+
+.ship-body {
+  width: 250px;
+  height: 80px;
+  background: #a7a7a7;
+  position: absolute; /* absolute inside container */
+  bottom: 0; /* stick to bottom */
+  left: 0%;
+  border-radius: 30% / 100%;
+}
+
+.ship-head {
+  width: 80px;
+  height: 80px;
+  background-color: #005fa2;
+  position: absolute;
+  top: -5%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.ship-line {
+  width: 250px;
+  height: 5px;
+  background-color: #005fa2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+  align-items: center;
+  z-index: 10;
+}
+
+form h1 {
+  color: #fff;
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 80px;
+}
+
+form input {
+  background-color: transparent;
+  border: 1px #fff solid;
+  margin-top: 20px;
+  width: 250px;
+  border-radius: 5px;
+  padding: 6px 10px;
+  color: white;
+  outline: none;
+  font-size: 12px;
+}
+
+form button {
+  margin-top: 20px;
+  font-size: 13px;
+  padding: 2px 25px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 0;
+}
+
+.tasks-sec {
+  width: 300px;
+  margin: 5px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+}
+
+.tasks-label {
+  border-bottom: 1px solid #6f6f6f;
+  width: 100%;
+}
+
+.tasks-label span {
+  color: #6f6f6f;
+  font-size: 10px;
+}
+
+.task {
+  color: #dadada;
+  border: 1px solid #6f6f6f;
+  width: 280px;
+  padding: 5px 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 900px) {
+  form {
+    padding-top: 12%;
+  }
+
+  div.moon {
+    width: 120px;
+    height: 120px;
+    left: 20%;
+  }
+
+  .ship-container {
+    left: 20%;
+  }
+}
