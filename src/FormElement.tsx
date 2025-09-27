@@ -1,9 +1,10 @@
-import { addTask, getToDoList } from "./lib";
+import { addTask, getFinishedList, getToDoList } from "./lib";
 import React, { useState } from "react";
 import Task from "./Task";
 
 function FormElement() {
   const [tasks, setTasks] = useState<string[]>(getToDoList());
+  const [finished, setFinished] = useState<string[]>(getFinishedList());
   const [task, setTask] = useState<string | null>(null);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTask(e.target.value);
@@ -32,9 +33,31 @@ function FormElement() {
           <span>Tasks</span>
         </div>
         {tasks.map((v, i) => (
-          <Task task={v} key={i} setTasks={setTasks} />
+          <Task
+            task={v}
+            key={i}
+            setTasks={setTasks}
+            setFinished={setFinished}
+            isFinished={false}
+          />
         ))}
       </section>
+      {finished[0] && (
+        <section className="tasks-sec">
+          <div className="tasks-label">
+            <span>Finished</span>
+          </div>
+          {finished.map((v, i) => (
+            <Task
+              task={v}
+              key={i}
+              setTasks={setTasks}
+              setFinished={setFinished}
+              isFinished={true}
+            />
+          ))}
+        </section>
+      )}
     </>
   );
 }
